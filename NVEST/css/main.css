@@ -393,7 +393,14 @@ ul.nostyle i {
   margin-top: 40px;
 }
 #cta2 {
-  background: #242a33;
+  background : -moz-linear-gradient(10.94% -19.47% -45deg,rgba(175, 42, 57, 1) 0%,rgba(166, 39, 53, 1) 2.04%,rgba(126, 25, 34, 1) 11.54%,rgba(96, 15, 20, 1) 20.93%,rgba(74, 7, 9, 1) 30.06%,rgba(60, 3, 3, 1) 38.81%,rgba(56, 1, 1, 1) 46.78%,rgba(56, 1, 1, 1) 54.3%,rgba(56, 1, 1, 1) 100%);
+  background : -webkit-linear-gradient(-45deg, rgba(175, 42, 57, 1) 0%, rgba(166, 39, 53, 1) 2.04%, rgba(126, 25, 34, 1) 11.54%, rgba(96, 15, 20, 1) 20.93%, rgba(74, 7, 9, 1) 30.06%, rgba(60, 3, 3, 1) 38.81%, rgba(56, 1, 1, 1) 46.78%, rgba(56, 1, 1, 1) 54.3%, rgba(56, 1, 1, 1) 100%);
+  background : -webkit-gradient(linear,10.94% -19.47% ,89.06% 119.47% ,color-stop(0,rgba(175, 42, 57, 1) ),color-stop(0.0204,rgba(166, 39, 53, 1) ),color-stop(0.1154,rgba(126, 25, 34, 1) ),color-stop(0.2093,rgba(96, 15, 20, 1) ),color-stop(0.3006,rgba(74, 7, 9, 1) ),color-stop(0.3881,rgba(60, 3, 3, 1) ),color-stop(0.4678,rgba(56, 1, 1, 1) ),color-stop(0.543,rgba(56, 1, 1, 1) ),color-stop(1,rgba(56, 1, 1, 1) ));
+  background : -o-linear-gradient(-45deg, rgba(175, 42, 57, 1) 0%, rgba(166, 39, 53, 1) 2.04%, rgba(126, 25, 34, 1) 11.54%, rgba(96, 15, 20, 1) 20.93%, rgba(74, 7, 9, 1) 30.06%, rgba(60, 3, 3, 1) 38.81%, rgba(56, 1, 1, 1) 46.78%, rgba(56, 1, 1, 1) 54.3%, rgba(56, 1, 1, 1) 100%);
+  background : -ms-linear-gradient(-45deg, rgba(175, 42, 57, 1) 0%, rgba(166, 39, 53, 1) 2.04%, rgba(126, 25, 34, 1) 11.54%, rgba(96, 15, 20, 1) 20.93%, rgba(74, 7, 9, 1) 30.06%, rgba(60, 3, 3, 1) 38.81%, rgba(56, 1, 1, 1) 46.78%, rgba(56, 1, 1, 1) 54.3%, rgba(56, 1, 1, 1) 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#AF2A39', endColorstr='#380101' ,GradientType=0)";
+  background : linear-gradient(135deg, rgba(175, 42, 57, 1) 0%, rgba(166, 39, 53, 1) 2.04%, rgba(126, 25, 34, 1) 11.54%, rgba(96, 15, 20, 1) 20.93%, rgba(74, 7, 9, 1) 30.06%, rgba(60, 3, 3, 1) 38.81%, rgba(56, 1, 1, 1) 46.78%, rgba(56, 1, 1, 1) 54.3%, rgba(56, 1, 1, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#AF2A39',endColorstr='#380101' , GradientType=1);
   background-size: cover;
   color: #fff;
   padding: 70px 0;
@@ -773,35 +780,100 @@ ul.nostyle i {
 }
 
 /*---------------------------------------*/
-.content2 h1 {
-  font-weight: 500;
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar {
+  fill: orange;
+}
+
+.solidArc:hover {
+  fill: orangered ;
+}
+
+.solidArc {
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.aster-score { 
+  line-height: 1;
+  font-weight: bold;
+  font-size: 500%;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
   text-align: center;
 }
 
-svg#donut-chart,
-svg#donut-chart2 {
-  display: block;
-  margin: 0 auto;
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
 }
 
-text.inner-circle, 
-text.inner-circle2 {
-  font-weight: 400;
-  font-size: 20px;
-  text-transform: uppercase;
+/*legend*/
+
+.legend_row {
+  display: flex;
+  justify-content: left;
 }
 
-.arc,
-.arc2 {
-  cursor: pointer;
+.color {
+  width: 30px;
+  height: 20px;
+  border: 1px solid grey;
+  margin-left: 40%;
+  margin-right: 5px;
 }
-.arc:hover,
-.arc2:hover {
-  opacity: .85;
+
+.color1 {
+  background-color: #310115;
 }
-.arc text,
-.arc2 text {
-  font-weight: 300;
-  font-size: 18px;
-  color: #fff;
+.color2 {
+  background-color: #720130;
+}
+.color3 {
+  background-color: #ad034a;
+}
+.color4 {
+  background-color: #f75e9d;
+}
+.color5 {
+  background-color: #f4a4c5;
+}
+.color6 {
+  background-color: rgb(189, 56, 8);
+}
+.color7 {
+  background-color: rgb(241, 140, 106);
 }

@@ -1,0 +1,6 @@
+"id","order","score","weight","color","label"
+"TM",1,800,0.5,"#310115","Team"
+"AP",2,100,0.5,"#720130","Advisors & Partners"
+"RP",3,100,0.5,"#ad034a","Reward Pool"
+"PS",4,600,1,"#f75e9d","Pre Sales"
+"PUS",5,400,1,"#f4a4c5","Public Sales"
